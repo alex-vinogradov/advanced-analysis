@@ -1,0 +1,25 @@
+# Preface {.unnumbered}
+
+## Alternatives for advanced longitudinal analysis
+
+Below is a proposal of the different analysis that could be done on the longitudinal survey data. They are ordered by complexity and also by the value of the results for informing responses and policy development. Publications-wise, all of these could be shaped into regional analysis, country analysis or thematic analysis.
+
+1.	**Cross-sectional trend analysis:** Looking at changes over time in key indicators such as living conditions, economic status, integration, needs, intentions and return conditions. This can identify both short-term fluctuations and long-term trends.
+
+2.	**Cohort analysis:** Despite not having the same respondents every time, you can track specific cohorts based on shared characteristics (e.g., X,Y,Z round participation, age, location, origin, or time of displacement) to see how their experiences and responses change over time.
+
+3.	**Survival analysis:** the probability that a subject will survive (not experience the event) past a certain time. In the context of Ukraine's displaced population, for example, to understand those who have returned to Ukraine, the duration of displacement and factors that contribute to the likelihood of return or not, or the likelihood to be employed and integrated abroad.
+
+4.	**Predictive modelling:** Using the data to predict future trends in refugee movements or returnees, on evolutions of intentions, or to anticipate the needs of these populations, based on past patterns and current responses. 
+
+5.	**Change-point analysis:** Identifying points in time when significant shifts in responses occurred, which could be linked to external events or changes in the situation in Ukraine, shelling campaigns, TP extensions, etc.
+
+6.	**Impact assessment:** Analys the impact of specific events (e.g., changes in conflict intensity, policy changes, or humanitarian interventions) on the well-being of refugees and returnees.
+
+7.	**Path analysis:** doing multiple regressions analysis to generate a complex model of refugee and returnee behaviour, to understand how context and individual factors interact to affect outcomes, such as integration process in different locations, or based on certain household or individual characteristics. For example, mapping the complex relations between employment, language proficiency, previous employment categories and education (employment status directly affects integration, while language proficiency affects both employment status and integration directly, and education affects language proficiency, which in turn affects employment and integration). To understand the direct and indirect relations between variables, testing basic hypothesis about Ukraine refugees.
+
+8.	**Natural language processing (NLP)** on open-ended questions from the longitudinal survey, through a)thematic analysis to identify common themes or topics that emerge from the survey responses and how they evolved over time, b)sentiment analysis: This involves assessing the sentiment or emotional tone behind the responses. You can determine whether the overall sentiment about a certain aspect of refugee life, such as living conditions or access to services, is positive, negative, or neutral, c)keyword extraction, and d) predictive analysis to predict outcomes or trends based on language used (language used before actually returning, or for those staying). Overall, analysing the qualitative answers would allow for better understanding the experiences and perceptions of Ukrainian refugees and returnees, while contextualizing the quantitative findings and giving a voice to the personal stories behind the numbers.
+
+9.	**Panel attrition analysis and addressing/filling missing values:** To understand the nature of the panel data better, analysing the patterns of drop-out or non-response among participants and assessing how this might affect the results. Also adjusting for missing values and exploring strategies to fill missing values based on other responses. 
+
+10.	**Mixed-methods analysis:** Combining the quantitative data with the qualitative data from the open-ended survey questions to provide a more nuanced understanding of the refugees' and returnees' experiences.

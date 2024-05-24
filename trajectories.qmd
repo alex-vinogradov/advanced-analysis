@@ -1,0 +1,23 @@
+# Trajectory mining
+
+
+
+## General description of Traminer use in LS, specificities of LS data
+
+### How blanks/missing values are filled
+
+### Why this is necessary
+
+### Method chosen
+
+### Bias/limits
+
+## How number of states are reduced
+
+### Why this is necessary
+
+### Rationale/justification for choice of aggregation of states
+
+### Bias/limits
+
+### Example (with visuals and written analysis) to walk reader through this

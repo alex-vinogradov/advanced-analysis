@@ -1,0 +1,7 @@
+# Predictive modeling
+
+To date, a scheme has been developed to find statistically significant predictors of categorical dependent variables based on chi-square criterion, analysis of residuals, and effect size determination for cross-tabulation tables. The individual predictors are then combined into an overall prediction model using logistic regression. The most recent application of such a scheme is the prediction of household debt in Round 21. Applying this scheme to analyze the data for Poland did not reveal any important differences.
+
+**Challenges:** The predicted criterion and predictors must be measured in the same round or be not too far apart in time, because otherwise the sample size starts to shrink significantly.
+
+To account for the longitudinal nature of our data, I developed an algorithm to find the most recent records for each respondent when a change in their status occurred. In the process of applying the algorithm, some problematic issues emerged - for example, there are a significant number of respondents who have never been interviewed as refugees, the number of returnees in later rounds is very small, which makes it difficult to infer statistically significant trends, in some rounds a significant number of new respondents are recruited, which interferes with the processes of natural status change. All these features significantly affect the efficiency of longitudinal analysis methods.

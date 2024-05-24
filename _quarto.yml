@@ -1,0 +1,27 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Advanced analysis of longitudinal data"
+  author: "Alexander Vinogradov"
+  date: "3/24/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - predictors.qmd
+    - trajectories.qmd
+    - accommodation.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: solar
+  pdf:
+    documentclass: scrreprt
+
+
+

@@ -1,0 +1,233 @@
+# Trajectories of accommodation in Germany
+
+The data were prepared for analysis as follows: the longitudinal data format was converted into a wide format for two variables: country and accommodation for rounds 4, 10, 16, 21/22. The converted data are stored in the file "wide-accomm.rds" for further analysis of trajectories.
+
+На першому кроці аналізу завантажуються потрібні пакети, які дозволяють заповнити пропущені значення і визначити послідовності станів для змінної accommodation.
+
+```{r}
+library(TraMineR)
+library(TraMineRextras)
+library(seqimpute)
+library(dplyr)
+
+wide <- readRDS("wide-accomm.rds")
+```
+
+Fill only internal gaps in the data using Multiple Imputation. 
+
+```{r}
+sequence <- seqimpute(
+  wide, var = 6:9, m = 1, timing = TRUE,
+  npt = 0, nfi = 0
+)
+```
+
+Define sequence object. Five states
+
+```{r}
+sequence.alphabet <- c(
+  'authorities',
+  'rented',
+  'other',
+  'in Ukraine',
+  'in other country'
+)
+
+sequence.scode <- c(
+  "AUTHOR",
+  "RENTED",
+  "OTHACC",
+  "IN.UKR",
+  "IN.OTH"
+)
+
+sequence.lab <- c(
+  'Provided by authorities',
+  'Rented',
+  'Other types of accommodation',
+  'in Ukraine',
+  'in other country'
+)
+
+sequence.seq <- seqdef(
+  data = sequence$imp$imp1,
+  var = 1:4,
+  alphabet = sequence.alphabet,
+  states = sequence.scode,
+  labels = sequence.lab,
+  xtstep = 1,
+  cpal = rainbow(5),
+  left = NA, right = NA
+)
+
+```
+
+## Frequency tables
+
+All existing sequences of accommodation trajectories, sorted from the most frequent to the least frequent.
+
+```{r}
+seqtab(
+  sequence.seq, idxs = 0
+)
+```
+
+
+## Most frequent sequences plot
+
+The legend that will be used for the sequence charts that follow
+
+```{r}
+#| fig-cap: Legend for charts
+seqlegend(sequence.seq)
+```
+
+Frequency tables contain too much information. A graphical representation allows you to focus on the trajectories that occur most often. The following graph shows 20 sequences that represent 66.2% of all sequences in the data. The frequency of the particular sequence in the chart corresponds to the height of the row.
+
+```{r}
+seqfplot(
+  sequence.seq, idxs = 1:20,
+  with.legend = FALSE, cex.axis = 0.65,
+  border = TRUE, pbarw = TRUE,
+  main = "Twenty most frequent sequences"
+)
+```
+
+To see all the picture we can plot
+
+```{r}
+seqplot(
+  seqdata = sequence.seq, type = "I", # idxs = 1:100,
+  with.legend = FALSE, cex.axis = 0.65,
+  sortv = sortv(sequence.seq, start = "beg")
+  # sortv = tran.seq$acc_R4
+)
+```
+
+Sorting is possible by final state, which allows you to trace sequences that end in a specific way. Sorting is also possible by any other important feature that describes the household.
+
+```{r}
+seqplot(
+  seqdata = sequence.seq, type = "I",
+  with.legend = FALSE, cex.axis = 0.65,
+  sortv = sortv(sequence.seq, start = "end")
+)
+```
+
+## Transition Types
+
+Even after reducing the number of sequence states, there are too many combinations due to various patterns of missing values to clearly identify the most important trends. To simplify the analysis, it makes sense to combine the sequences into groups (types). One approach proposed in the literature is to use cluster analysis. However, the hierarchical cluster analysis did not allow me to obtain logical clear groups, so I decided to go the other way: to classify the sequences based on the type of transitions from one state to another. To this end, the number of transitions in our data is first determined:
+
+```{r}
+transitions <- as.numeric(seqtransn(sequence.seq))
+
+(tb <- 100 * prop.table(table(transitions)))
+
+barplot(
+  tb, col = rainbow(4),
+  main = "Number of transitions"
+)
+```
+
+As you can see, the bulk of the sequences are those without transitions, which can be called stable trajectories.
+
+Now you can distinguish groups of sequences based on the number of transitions: no transitions, one transition, two transitions, more than one transition, and so on:
+
+```{r}
+sequence.seq %>% 
+  filter(transitions == 0) -> tran0.seq
+
+sequence.seq %>% 
+  filter(transitions == 1) -> tran1.seq
+
+sequence.seq %>% 
+  filter(transitions == 2) -> tran2.seq
+
+sequence.seq %>% 
+  filter(transitions >= 1) -> tran.seq
+```
+
+## Stable sequences
+
+Twenty most frequent sequences cover 93.8% of time-stable sequences.
+
+```{r}
+tran0.seq %>% 
+  seqfplot(
+    idxs = 1:20,
+    with.legend = F,
+    cex.axis = 0.65,
+    pbarw = T,
+    main = "20 stable sequences of accommodation"
+  )
+
+```
+
+We can simplify the presentation of information about time-stable sequences by ignoring their differences in the location of missing values:
+
+```{r}
+## Stable frequencies
+u <- tran0.seq
+u[u == "*" | u == "%"] <- NA
+
+apply(
+  X = u, MARGIN = 1, first, na_rm = TRUE
+) %>% sjmisc::frq()
+
+```
+
+Now you can group time-stable sequences by accommodation type in one chart:
+
+```{r}
+## Grouped
+grp <- apply(
+  X = u, MARGIN = 1, first, na_rm = TRUE
+)
+
+tran0.seq %>% 
+  seqfplot(
+    idxs = 0,
+    with.legend = TRUE, cex.axis = 0.65, pbarw = TRUE,
+    main = "Stable accommodation",
+    group = grp
+  )
+```
+
+## Sequences with transitions
+
+Now you can look at sequences with any number of transitions separately. For example, this table contains sequences with one or more state transitions:
+
+```{r}
+seqtab(
+  tran.seq, idxs = 0
+)
+```
+
+The most informative way to represent such sequences is in the form of a table of transitions between individual states. Such tables can also be built for transitions between individual rounds:
+
+```{r}
+## Table of transitions
+seqtrate(tran1.seq, with.missing = TRUE) %>%  # , time.varying = TRUE
+  round(digits = 2)
+```
+
+You can visualize transition tables using heatmaps:
+
+```{r}
+seqtrate(tran.seq, with.missing = TRUE) %>% 
+  round(digits = 2) %>% 
+  corrplot::corrplot(
+    method = "square", is.corr = FALSE, addCoef.col = "blue"
+  )
+```
+
+A chronograph chart shows the dynamics of state distributions between rounds for sequences with transitions:
+
+```{r}
+seqdplot(
+  tran.seq, main = "State distribution plot (transitions)",
+  with.legend = F, cex.axis = 0.65
+)
+
+```
+
