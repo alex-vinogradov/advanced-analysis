@@ -1,0 +1,159 @@
+# Accommodation in Germany
+
+a) we are leaving the end of sequences as a "void" (Not NA) to be able to categorize end-point as "last known"
+
+b) we restructure the categorisation of accommodation to do not have "other" as one of the main category but rather operate with theory-based categories, new categories are following: 
+
+- BLUE COLOR: government supported 
+- RED COLOR: temporary/dependent: (volunteer + ngo + collective centers + hostels + family/friends + employer)
+- GREEN COLOR: self-sufficient (rented + own)
+- YELLOW COLOR: in Ukraine
+- VIOLET COLOR: in other country
+
+```{r}
+library(dplyr)
+library(TraMineR)
+library(TraMineRextras)
+library(seqimpute)
+
+wide <- readRDS("wide-accomm-2.rds")
+
+## Impute internal gaps
+sequence <- seqimpute(
+  wide, var = 6:9, m = 1, timing = TRUE,
+  npt = 0, nfi = 0
+)
+
+### Sequence Mining
+sequence.alphabet <- c(
+  'government supported',
+  'temporary/dependent',
+  'self-sufficient',
+  'in Ukraine',
+  'in other country'
+)
+
+sequence.scode <- c(
+  "GOVSUP",
+  "TMPDEP",
+  "SLFSUF",
+  "IN.UKR",
+  "IN.OTH"
+)
+
+sequence.lab <- c(
+  'government supported',
+  'temporary/dependent',
+  'self-sufficient',
+  'in Ukraine',
+  'in other country'
+)
+
+## 
+sequence.seq <- seqdef(
+  data = sequence$imp$imp1,
+  var = 1:4,
+  alphabet = sequence.alphabet,
+  states = sequence.scode,
+  labels = sequence.lab,
+  cnames = c("R4", "R10", "R16", "R10/11"),
+  # cnames = 1:4,
+  xtstep = 1,
+  cpal = c("blue", "red", "green", "yellow", "violet"),
+  left = NA,
+  right = "DEL"
+)
+
+
+## 25 Most frequent sequences
+seqtab(
+  sequence.seq, idxs = 1:25
+)
+
+seqplot(
+  seqdata = sequence.seq,
+  type = "f",
+  idxs = 1:25,
+  with.legend = FALSE, border = FALSE,
+  cex.axis = 0.65,
+  main = "25 most frequent sequences"
+)
+
+# Sorted by end state
+seqplot(
+  seqdata = sequence.seq,
+  type = "I",
+  idxs = 0,
+  with.legend = FALSE,
+  sortv = sortv(sequence.seq, start = "end"),
+  cex.axis = 0.65,
+  main = "Sequences sorted by endings"
+)
+```
+
+Same information, but presented in a frequency table:
+
+```{r}
+df <- data.frame(table(sequence.seq))
+
+knitr::kable(
+  x = df %>% filter(Freq > 4),
+  caption = "Sequences sorted by end state"
+)
+```
+
+Miguel suggested ignore information about the round when respondent joined our sample, concentrating on the sequences of changes themselves
+
+```{r}
+## 
+sequence.seq <- seqdef(
+  data = sequence$imp$imp1,
+  var = 1:4,
+  alphabet = sequence.alphabet,
+  states = sequence.scode,
+  labels = sequence.lab,
+  cnames = 1:4,
+  xtstep = 1,
+  cpal = c("blue", "red", "green", "yellow", "violet"),
+  left = "DEL",
+  right = "DEL"
+)
+
+
+## 25 Most frequent sequences
+seqtab(
+  sequence.seq, idxs = 1:25
+)
+
+seqplot(
+  seqdata = sequence.seq,
+  type = "f",
+  idxs = 1:25,
+  with.legend = FALSE, border = FALSE,
+  cex.axis = 0.65,
+  main = "25 most frequent sequences"
+)
+
+# Sorted by end state
+seqplot(
+  seqdata = sequence.seq,
+  type = "I",
+  idxs = 0,
+  with.legend = FALSE,
+  sortv = sortv(sequence.seq, start = "end"),
+  cex.axis = 0.65,
+  main = "Sequences sorted by end state"
+)
+
+```
+
+Same information, but presented in a frequency table:
+
+```{r}
+df <- data.frame(table(sequence.seq))
+knitr::kable(
+  x = df %>% filter(Freq > 4),
+  caption = "Sequences sorted by end state"
+)
+```
+

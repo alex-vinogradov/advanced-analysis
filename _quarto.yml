@@ -12,6 +12,7 @@ book:
     - predictors.qmd
     - trajectories.qmd
     - accommodation.qmd
+    - germany.qmd
     - summary.qmd
     - references.qmd
 
