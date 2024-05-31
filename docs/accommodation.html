@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Advanced analysis of longitudinal data – 4&nbsp; Trajectories of accommodation in Germany</title>
+<title>Advanced analysis of longitudinal data – 4&nbsp; Trajectories of accommodation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./germany.html" rel="next">
 <link href="./trajectories.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./accommodation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation in Germany</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./accommodation.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -167,13 +167,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./accommodation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation in Germany</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./germany.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Accommodation in Germany</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -205,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation in Germany</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Trajectories of accommodation</span></h1>
 </div>
 
 
@@ -228,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TraMineR)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
-TraMineR stable version 2.2-9 (Built: 2024-04-27)</code></pre>
+TraMineR stable version 2.2-10 (Built: 2024-05-22)</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Website: http://traminer.unige.ch</code></pre>
@@ -364,90 +370,91 @@ Attaching package: 'dplyr'</code></pre>
 */1-AUTHOR/1                          54   4.526
 */2-AUTHOR/2                          51   4.275
 OTHACC/1                              45   3.772
-*/1-RENTED/1-AUTHOR/2                 44   3.688
+*/1-RENTED/1-AUTHOR/2                 43   3.604
 */1-AUTHOR/2                          42   3.521
 */2-AUTHOR/1                          37   3.101
 AUTHOR/1                              31   2.598
-*/1-RENTED/3                          28   2.347
 */1-OTHACC/1                          27   2.263
 */1-RENTED/1                          27   2.263
+*/1-RENTED/3                          27   2.263
 */1-OTHACC/3                          26   2.179
 */3-RENTED/1                          26   2.179
 */3-OTHACC/1                          25   2.096
-*/1-OTHACC/1-IN.UKR/2                 18   1.509
 */2-OTHACC/2                          18   1.509
-OTHACC/1-AUTHOR/3                     16   1.341
-*/1-OTHACC/1-AUTHOR/2                 14   1.174
-AUTHOR/4                              14   1.174
+*/1-OTHACC/1-IN.UKR/2                 16   1.341
+AUTHOR/4                              15   1.257
+OTHACC/1-AUTHOR/3                     14   1.174
 RENTED/1                              14   1.174
+*/1-OTHACC/1-AUTHOR/2                 13   1.090
 */1-AUTHOR/1-IN.UKR/2                 12   1.006
 */2-OTHACC/1                          12   1.006
 */1-OTHACC/2                          11   0.922
-OTHACC/4                              11   0.922
 */1-RENTED/1-AUTHOR/1                 10   0.838
 */1-OTHACC/1-AUTHOR/1                  9   0.754
 OTHACC/1-AUTHOR/2                      9   0.754
+OTHACC/4                               9   0.754
+*/1-OTHACC/2-AUTHOR/1                  8   0.671
 */2-RENTED/2                           8   0.671
 OTHACC/1-IN.UKR/3                      8   0.671
-*/1-OTHACC/2-AUTHOR/1                  7   0.587
-RENTED/2-AUTHOR/2                      7   0.587
+RENTED/2-AUTHOR/2                      8   0.671
+AUTHOR/3                               7   0.587
+OTHACC/2-AUTHOR/2                      7   0.587
 */1-AUTHOR/1-IN.UKR/1                  6   0.503
-*/1-OTHACC/1-RENTED/2                  6   0.503
+*/1-RENTED/1-AUTHOR/1-RENTED/1         6   0.503
 */1-RENTED/1-IN.UKR/2                  6   0.503
-AUTHOR/3                               6   0.503
 OTHACC/1-RENTED/1-AUTHOR/2             6   0.503
 OTHACC/2                               6   0.503
-OTHACC/2-AUTHOR/2                      6   0.503
-RENTED/1-AUTHOR/3                      6   0.503
 RENTED/2                               6   0.503
-*/1-RENTED/1-AUTHOR/1-RENTED/1         5   0.419
-OTHACC/1-IN.UKR/2                      5   0.419
-*/1-AUTHOR/2-RENTED/1                  4   0.335
+*/1-OTHACC/1-RENTED/2                  5   0.419
+IN.OTH/1-AUTHOR/3                      5   0.419
+OTHACC/2-AUTHOR/1                      5   0.419
+RENTED/1-AUTHOR/3                      5   0.419
 */1-RENTED/2                           4   0.335
+*/1-RENTED/2-AUTHOR/1                  4   0.335
 */2-RENTED/1                           4   0.335
 */2-RENTED/1-AUTHOR/1                  4   0.335
 AUTHOR/2                               4   0.335
-IN.OTH/1-AUTHOR/3                      4   0.335
 IN.OTH/2-OTHACC/2                      4   0.335
-OTHACC/1-RENTED/1-AUTHOR/1             4   0.335
-OTHACC/2-AUTHOR/1                      4   0.335
+OTHACC/1-IN.UKR/2                      4   0.335
 OTHACC/2-IN.UKR/2                      4   0.335
 OTHACC/3                               4   0.335
 RENTED/1-IN.UKR/3                      4   0.335
 RENTED/3                               4   0.335
+*/1-AUTHOR/1-RENTED/2                  3   0.251
 */1-AUTHOR/2-IN.UKR/1                  3   0.251
+*/1-AUTHOR/2-RENTED/1                  3   0.251
 */1-IN.OTH/1-AUTHOR/2                  3   0.251
+*/1-IN.OTH/1-OTHACC/1-AUTHOR/1         3   0.251
 */1-IN.OTH/1-OTHACC/2                  3   0.251
 */1-IN.OTH/2-AUTHOR/1                  3   0.251
 */1-IN.OTH/2-OTHACC/1                  3   0.251
-*/1-RENTED/2-AUTHOR/1                  3   0.251
-AUTHOR/2-IN.UKR/2                      3   0.251
 IN.OTH/1-OTHACC/1-AUTHOR/2             3   0.251
-IN.OTH/1-OTHACC/3                      3   0.251
-IN.OTH/2-AUTHOR/2                      3   0.251
-IN.OTH/2-IN.UKR/1-AUTHOR/1             3   0.251
 IN.OTH/3-AUTHOR/1                      3   0.251
 OTHACC/1-AUTHOR/1                      3   0.251
+OTHACC/1-RENTED/1-AUTHOR/1             3   0.251
 RENTED/1-IN.UKR/1                      3   0.251
 RENTED/4                               3   0.251
 */1-AUTHOR/1-OTHACC/2                  2   0.168
-*/1-AUTHOR/1-RENTED/2                  2   0.168
 */1-IN.OTH/1-AUTHOR/1                  2   0.168
-*/1-IN.OTH/1-IN.UKR/1-AUTHOR/1         2   0.168
-*/1-IN.OTH/1-OTHACC/1-AUTHOR/1         2   0.168
-*/1-OTHACC/1-AUTHOR/1-RENTED/1         2   0.168
+*/1-IN.UKR/1-AUTHOR/2                  2   0.168
 */1-OTHACC/1-IN.UKR/1-IN.OTH/1         2   0.168
 */1-OTHACC/1-RENTED/1                  2   0.168
+*/1-OTHACC/2-RENTED/1                  2   0.168
 */1-RENTED/1-AUTHOR/1-IN.UKR/1         2   0.168
 */2-OTHACC/1-AUTHOR/1                  2   0.168
 */2-OTHACC/1-IN.UKR/1                  2   0.168
 */2-OTHACC/1-RENTED/1                  2   0.168
 AUTHOR/1-IN.UKR/2                      2   0.168
+AUTHOR/1-IN.UKR/3                      2   0.168
+AUTHOR/1-OTHACC/1-AUTHOR/2             2   0.168
 AUTHOR/1-OTHACC/3                      2   0.168
-AUTHOR/1-RENTED/1-AUTHOR/2             2   0.168
-IN.OTH/1-OTHACC/1-RENTED/2             2   0.168
+AUTHOR/2-IN.UKR/2                      2   0.168
+IN.OTH/1-IN.UKR/1-OTHACC/1             2   0.168
+IN.OTH/1-OTHACC/3                      2   0.168
+IN.OTH/2-AUTHOR/2                      2   0.168
 IN.UKR/1-OTHACC/3                      2   0.168
-OTHACC/1-IN.OTH/3                      2   0.168
+OTHACC/1-IN.UKR/1-OTHACC/2             2   0.168
+OTHACC/1-RENTED/2                      2   0.168
 */1-AUTHOR/1-IN.UKR/1-OTHACC/1         1   0.084
 */1-AUTHOR/1-OTHACC/1-AUTHOR/1         1   0.084
 */1-AUTHOR/1-RENTED/1                  1   0.084
@@ -455,16 +462,18 @@ OTHACC/1-IN.OTH/3                      2   0.168
 */1-AUTHOR/2-IN.OTH/1                  1   0.084
 */1-IN.OTH/1-AUTHOR/1-IN.OTH/1         1   0.084
 */1-IN.OTH/1-AUTHOR/1-OTHACC/1         1   0.084
+*/1-IN.OTH/1-IN.UKR/1-AUTHOR/1         1   0.084
 */1-IN.OTH/1-IN.UKR/1-OTHACC/1         1   0.084
 */1-IN.OTH/1-OTHACC/1-IN.OTH/1         1   0.084
 */1-IN.UKR/1-AUTHOR/1                  1   0.084
 */1-IN.UKR/1-AUTHOR/1-OTHACC/1         1   0.084
-*/1-IN.UKR/1-AUTHOR/2                  1   0.084
 */1-IN.UKR/1-OTHACC/1-AUTHOR/1         1   0.084
 */1-IN.UKR/1-OTHACC/1-IN.UKR/1         1   0.084
 */1-IN.UKR/1-OTHACC/2                  1   0.084
-*/1-IN.UKR/2-AUTHOR/1                  1   0.084
+*/1-OTHACC/1-AUTHOR/1-IN.UKR/1         1   0.084
+*/1-OTHACC/1-AUTHOR/1-RENTED/1         1   0.084
 */1-OTHACC/1-IN.UKR/1-OTHACC/1         1   0.084
+*/1-OTHACC/2-IN.UKR/1                  1   0.084
 */1-RENTED/1-AUTHOR/1-OTHACC/1         1   0.084
 */1-RENTED/1-IN.UKR/1                  1   0.084
 */1-RENTED/1-IN.UKR/1-AUTHOR/1         1   0.084
@@ -474,55 +483,58 @@ OTHACC/1-IN.OTH/3                      2   0.168
 */2-IN.OTH/1-OTHACC/1                  1   0.084
 */2-IN.UKR/1-OTHACC/1                  1   0.084
 AUTHOR/1-IN.OTH/1-IN.UKR/2             1   0.084
-AUTHOR/1-IN.UKR/1-AUTHOR/1             1   0.084
 AUTHOR/1-IN.UKR/1-AUTHOR/2             1   0.084
 AUTHOR/1-IN.UKR/1-IN.OTH/1             1   0.084
-AUTHOR/1-IN.UKR/3                      1   0.084
-AUTHOR/1-OTHACC/1-AUTHOR/2             1   0.084
+AUTHOR/1-OTHACC/1-RENTED/1             1   0.084
 AUTHOR/1-OTHACC/2                      1   0.084
-AUTHOR/1-OTHACC/2-AUTHOR/1             1   0.084
 AUTHOR/1-OTHACC/2-RENTED/1             1   0.084
 AUTHOR/1-RENTED/1-AUTHOR/1             1   0.084
-AUTHOR/1-RENTED/2                      1   0.084
+AUTHOR/1-RENTED/1-AUTHOR/2             1   0.084
 AUTHOR/1-RENTED/3                      1   0.084
 IN.OTH/1-AUTHOR/1                      1   0.084
 IN.OTH/1-AUTHOR/1-IN.UKR/1             1   0.084
+IN.OTH/1-AUTHOR/1-RENTED/2             1   0.084
 IN.OTH/1-AUTHOR/2-RENTED/1             1   0.084
-IN.OTH/1-IN.UKR/1-OTHACC/1             1   0.084
 IN.OTH/1-IN.UKR/2-AUTHOR/1             1   0.084
 IN.OTH/1-OTHACC/1-IN.OTH/2             1   0.084
+IN.OTH/1-OTHACC/1-IN.UKR/1-AUTHOR/1    1   0.084
 IN.OTH/1-OTHACC/1-IN.UKR/2             1   0.084
-IN.OTH/1-OTHACC/2                      1   0.084
+IN.OTH/1-OTHACC/1-RENTED/2             1   0.084
 IN.OTH/1-OTHACC/2-AUTHOR/1             1   0.084
 IN.OTH/1-OTHACC/2-IN.UKR/1             1   0.084
+IN.OTH/1-RENTED/1-AUTHOR/2             1   0.084
 IN.OTH/1-RENTED/2-AUTHOR/1             1   0.084
 IN.OTH/2-AUTHOR/1                      1   0.084
+IN.OTH/2-IN.UKR/1-AUTHOR/1             1   0.084
 IN.OTH/2-IN.UKR/1-OTHACC/1             1   0.084
 IN.OTH/2-OTHACC/1-AUTHOR/1             1   0.084
+IN.OTH/3-OTHACC/1                      1   0.084
+IN.UKR/1-AUTHOR/1-IN.UKR/1-AUTHOR/1    1   0.084
 IN.UKR/1-AUTHOR/1-RENTED/2             1   0.084
-IN.UKR/1-AUTHOR/3                      1   0.084
 IN.UKR/1-OTHACC/1-AUTHOR/2             1   0.084
 IN.UKR/1-OTHACC/1-IN.UKR/1-AUTHOR/1    1   0.084
 IN.UKR/1-OTHACC/1-IN.UKR/1-OTHACC/1    1   0.084
 IN.UKR/2-AUTHOR/1                      1   0.084
 IN.UKR/2-OTHACC/1-AUTHOR/1             1   0.084
+OTHACC/1-AUTHOR/1-IN.UKR/1             1   0.084
 OTHACC/1-AUTHOR/1-IN.UKR/1-OTHACC/1    1   0.084
 OTHACC/1-AUTHOR/1-IN.UKR/2             1   0.084
+OTHACC/1-AUTHOR/2-IN.UKR/1             1   0.084
 OTHACC/1-AUTHOR/2-RENTED/1             1   0.084
 OTHACC/1-IN.OTH/1                      1   0.084
 OTHACC/1-IN.OTH/1-IN.UKR/1-IN.OTH/1    1   0.084
-OTHACC/1-IN.UKR/1-OTHACC/2             1   0.084
+OTHACC/1-IN.OTH/1-OTHACC/1-IN.OTH/1    1   0.084
+OTHACC/1-IN.OTH/2-OTHACC/1             1   0.084
+OTHACC/1-IN.OTH/3                      1   0.084
+OTHACC/1-IN.UKR/1-AUTHOR/2             1   0.084
 OTHACC/1-RENTED/1                      1   0.084
 OTHACC/1-RENTED/1-AUTHOR/1-IN.UKR/1    1   0.084
 OTHACC/1-RENTED/1-IN.UKR/2             1   0.084
-OTHACC/1-RENTED/2                      1   0.084
 OTHACC/1-RENTED/3                      1   0.084
-OTHACC/2-AUTHOR/1-IN.UKR/1             1   0.084
 OTHACC/2-AUTHOR/1-OTHACC/1             1   0.084
 OTHACC/2-AUTHOR/1-RENTED/1             1   0.084
 OTHACC/2-IN.UKR/1                      1   0.084
 OTHACC/2-IN.UKR/1-AUTHOR/1             1   0.084
-OTHACC/2-RENTED/1                      1   0.084
 OTHACC/3-IN.UKR/1                      1   0.084
 OTHACC/3-RENTED/1                      1   0.084
 RENTED/1-AUTHOR/1-RENTED/1             1   0.084
@@ -606,7 +618,7 @@ RENTED/3-AUTHOR/1                      1   0.084</code></pre>
 <div class="cell-output cell-output-stdout">
 <pre><code>transitions
          0          1          2          3 
-67.0578374 25.9010897  6.6219614  0.4191115 </code></pre>
+66.9740151 25.4819782  6.8734283  0.6705784 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  tb, <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">4</span>),</span>
@@ -667,13 +679,13 @@ RENTED/3-AUTHOR/1                      1   0.084</code></pre>
 <span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> sjmisc<span class="sc">::</span><span class="fu">frq</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;character&gt; 
-# total N=800 valid N=800 mean=1.54 sd=0.75
+# total N=799 valid N=799 mean=1.54 sd=0.75
 
 Value  |   N | Raw % | Valid % | Cum. %
 ---------------------------------------
-AUTHOR | 491 | 61.38 |   61.38 |  61.38
-OTHACC | 185 | 23.13 |   23.13 |  84.50
-RENTED | 124 | 15.50 |   15.50 | 100.00
+AUTHOR | 493 | 61.70 |   61.70 |  61.70
+OTHACC | 183 | 22.90 |   22.90 |  84.61
+RENTED | 123 | 15.39 |   15.39 | 100.00
 &lt;NA&gt;   |   0 |  0.00 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
 </div>
 </div>
@@ -709,65 +721,66 @@ RENTED | 124 | 15.50 |   15.50 | 100.00
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                    Freq Percent
-*/1-RENTED/1-AUTHOR/2                 44   11.20
-*/1-OTHACC/1-IN.UKR/2                 18    4.58
-OTHACC/1-AUTHOR/3                     16    4.07
-*/1-OTHACC/1-AUTHOR/2                 14    3.56
+*/1-RENTED/1-AUTHOR/2                 43   10.91
+*/1-OTHACC/1-IN.UKR/2                 16    4.06
+OTHACC/1-AUTHOR/3                     14    3.55
+*/1-OTHACC/1-AUTHOR/2                 13    3.30
 */1-AUTHOR/1-IN.UKR/2                 12    3.05
 */1-RENTED/1-AUTHOR/1                 10    2.54
-*/1-OTHACC/1-AUTHOR/1                  9    2.29
-OTHACC/1-AUTHOR/2                      9    2.29
-OTHACC/1-IN.UKR/3                      8    2.04
-*/1-OTHACC/2-AUTHOR/1                  7    1.78
-RENTED/2-AUTHOR/2                      7    1.78
-*/1-AUTHOR/1-IN.UKR/1                  6    1.53
-*/1-OTHACC/1-RENTED/2                  6    1.53
-*/1-RENTED/1-IN.UKR/2                  6    1.53
-OTHACC/1-RENTED/1-AUTHOR/2             6    1.53
-OTHACC/2-AUTHOR/2                      6    1.53
-RENTED/1-AUTHOR/3                      6    1.53
-*/1-RENTED/1-AUTHOR/1-RENTED/1         5    1.27
-OTHACC/1-IN.UKR/2                      5    1.27
-*/1-AUTHOR/2-RENTED/1                  4    1.02
+*/1-OTHACC/1-AUTHOR/1                  9    2.28
+OTHACC/1-AUTHOR/2                      9    2.28
+*/1-OTHACC/2-AUTHOR/1                  8    2.03
+OTHACC/1-IN.UKR/3                      8    2.03
+RENTED/2-AUTHOR/2                      8    2.03
+OTHACC/2-AUTHOR/2                      7    1.78
+*/1-AUTHOR/1-IN.UKR/1                  6    1.52
+*/1-RENTED/1-AUTHOR/1-RENTED/1         6    1.52
+*/1-RENTED/1-IN.UKR/2                  6    1.52
+OTHACC/1-RENTED/1-AUTHOR/2             6    1.52
+*/1-OTHACC/1-RENTED/2                  5    1.27
+IN.OTH/1-AUTHOR/3                      5    1.27
+OTHACC/2-AUTHOR/1                      5    1.27
+RENTED/1-AUTHOR/3                      5    1.27
+*/1-RENTED/2-AUTHOR/1                  4    1.02
 */2-RENTED/1-AUTHOR/1                  4    1.02
-IN.OTH/1-AUTHOR/3                      4    1.02
 IN.OTH/2-OTHACC/2                      4    1.02
-OTHACC/1-RENTED/1-AUTHOR/1             4    1.02
-OTHACC/2-AUTHOR/1                      4    1.02
+OTHACC/1-IN.UKR/2                      4    1.02
 OTHACC/2-IN.UKR/2                      4    1.02
 RENTED/1-IN.UKR/3                      4    1.02
+*/1-AUTHOR/1-RENTED/2                  3    0.76
 */1-AUTHOR/2-IN.UKR/1                  3    0.76
+*/1-AUTHOR/2-RENTED/1                  3    0.76
 */1-IN.OTH/1-AUTHOR/2                  3    0.76
+*/1-IN.OTH/1-OTHACC/1-AUTHOR/1         3    0.76
 */1-IN.OTH/1-OTHACC/2                  3    0.76
 */1-IN.OTH/2-AUTHOR/1                  3    0.76
 */1-IN.OTH/2-OTHACC/1                  3    0.76
-*/1-RENTED/2-AUTHOR/1                  3    0.76
-AUTHOR/2-IN.UKR/2                      3    0.76
 IN.OTH/1-OTHACC/1-AUTHOR/2             3    0.76
-IN.OTH/1-OTHACC/3                      3    0.76
-IN.OTH/2-AUTHOR/2                      3    0.76
-IN.OTH/2-IN.UKR/1-AUTHOR/1             3    0.76
 IN.OTH/3-AUTHOR/1                      3    0.76
 OTHACC/1-AUTHOR/1                      3    0.76
+OTHACC/1-RENTED/1-AUTHOR/1             3    0.76
 RENTED/1-IN.UKR/1                      3    0.76
 */1-AUTHOR/1-OTHACC/2                  2    0.51
-*/1-AUTHOR/1-RENTED/2                  2    0.51
 */1-IN.OTH/1-AUTHOR/1                  2    0.51
-*/1-IN.OTH/1-IN.UKR/1-AUTHOR/1         2    0.51
-*/1-IN.OTH/1-OTHACC/1-AUTHOR/1         2    0.51
-*/1-OTHACC/1-AUTHOR/1-RENTED/1         2    0.51
+*/1-IN.UKR/1-AUTHOR/2                  2    0.51
 */1-OTHACC/1-IN.UKR/1-IN.OTH/1         2    0.51
 */1-OTHACC/1-RENTED/1                  2    0.51
+*/1-OTHACC/2-RENTED/1                  2    0.51
 */1-RENTED/1-AUTHOR/1-IN.UKR/1         2    0.51
 */2-OTHACC/1-AUTHOR/1                  2    0.51
 */2-OTHACC/1-IN.UKR/1                  2    0.51
 */2-OTHACC/1-RENTED/1                  2    0.51
 AUTHOR/1-IN.UKR/2                      2    0.51
+AUTHOR/1-IN.UKR/3                      2    0.51
+AUTHOR/1-OTHACC/1-AUTHOR/2             2    0.51
 AUTHOR/1-OTHACC/3                      2    0.51
-AUTHOR/1-RENTED/1-AUTHOR/2             2    0.51
-IN.OTH/1-OTHACC/1-RENTED/2             2    0.51
+AUTHOR/2-IN.UKR/2                      2    0.51
+IN.OTH/1-IN.UKR/1-OTHACC/1             2    0.51
+IN.OTH/1-OTHACC/3                      2    0.51
+IN.OTH/2-AUTHOR/2                      2    0.51
 IN.UKR/1-OTHACC/3                      2    0.51
-OTHACC/1-IN.OTH/3                      2    0.51
+OTHACC/1-IN.UKR/1-OTHACC/2             2    0.51
+OTHACC/1-RENTED/2                      2    0.51
 */1-AUTHOR/1-IN.UKR/1-OTHACC/1         1    0.25
 */1-AUTHOR/1-OTHACC/1-AUTHOR/1         1    0.25
 */1-AUTHOR/1-RENTED/1                  1    0.25
@@ -775,16 +788,18 @@ OTHACC/1-IN.OTH/3                      2    0.51
 */1-AUTHOR/2-IN.OTH/1                  1    0.25
 */1-IN.OTH/1-AUTHOR/1-IN.OTH/1         1    0.25
 */1-IN.OTH/1-AUTHOR/1-OTHACC/1         1    0.25
+*/1-IN.OTH/1-IN.UKR/1-AUTHOR/1         1    0.25
 */1-IN.OTH/1-IN.UKR/1-OTHACC/1         1    0.25
 */1-IN.OTH/1-OTHACC/1-IN.OTH/1         1    0.25
 */1-IN.UKR/1-AUTHOR/1                  1    0.25
 */1-IN.UKR/1-AUTHOR/1-OTHACC/1         1    0.25
-*/1-IN.UKR/1-AUTHOR/2                  1    0.25
 */1-IN.UKR/1-OTHACC/1-AUTHOR/1         1    0.25
 */1-IN.UKR/1-OTHACC/1-IN.UKR/1         1    0.25
 */1-IN.UKR/1-OTHACC/2                  1    0.25
-*/1-IN.UKR/2-AUTHOR/1                  1    0.25
+*/1-OTHACC/1-AUTHOR/1-IN.UKR/1         1    0.25
+*/1-OTHACC/1-AUTHOR/1-RENTED/1         1    0.25
 */1-OTHACC/1-IN.UKR/1-OTHACC/1         1    0.25
+*/1-OTHACC/2-IN.UKR/1                  1    0.25
 */1-RENTED/1-AUTHOR/1-OTHACC/1         1    0.25
 */1-RENTED/1-IN.UKR/1                  1    0.25
 */1-RENTED/1-IN.UKR/1-AUTHOR/1         1    0.25
@@ -794,55 +809,58 @@ OTHACC/1-IN.OTH/3                      2    0.51
 */2-IN.OTH/1-OTHACC/1                  1    0.25
 */2-IN.UKR/1-OTHACC/1                  1    0.25
 AUTHOR/1-IN.OTH/1-IN.UKR/2             1    0.25
-AUTHOR/1-IN.UKR/1-AUTHOR/1             1    0.25
 AUTHOR/1-IN.UKR/1-AUTHOR/2             1    0.25
 AUTHOR/1-IN.UKR/1-IN.OTH/1             1    0.25
-AUTHOR/1-IN.UKR/3                      1    0.25
-AUTHOR/1-OTHACC/1-AUTHOR/2             1    0.25
+AUTHOR/1-OTHACC/1-RENTED/1             1    0.25
 AUTHOR/1-OTHACC/2                      1    0.25
-AUTHOR/1-OTHACC/2-AUTHOR/1             1    0.25
 AUTHOR/1-OTHACC/2-RENTED/1             1    0.25
 AUTHOR/1-RENTED/1-AUTHOR/1             1    0.25
-AUTHOR/1-RENTED/2                      1    0.25
+AUTHOR/1-RENTED/1-AUTHOR/2             1    0.25
 AUTHOR/1-RENTED/3                      1    0.25
 IN.OTH/1-AUTHOR/1                      1    0.25
 IN.OTH/1-AUTHOR/1-IN.UKR/1             1    0.25
+IN.OTH/1-AUTHOR/1-RENTED/2             1    0.25
 IN.OTH/1-AUTHOR/2-RENTED/1             1    0.25
-IN.OTH/1-IN.UKR/1-OTHACC/1             1    0.25
 IN.OTH/1-IN.UKR/2-AUTHOR/1             1    0.25
 IN.OTH/1-OTHACC/1-IN.OTH/2             1    0.25
+IN.OTH/1-OTHACC/1-IN.UKR/1-AUTHOR/1    1    0.25
 IN.OTH/1-OTHACC/1-IN.UKR/2             1    0.25
-IN.OTH/1-OTHACC/2                      1    0.25
+IN.OTH/1-OTHACC/1-RENTED/2             1    0.25
 IN.OTH/1-OTHACC/2-AUTHOR/1             1    0.25
 IN.OTH/1-OTHACC/2-IN.UKR/1             1    0.25
+IN.OTH/1-RENTED/1-AUTHOR/2             1    0.25
 IN.OTH/1-RENTED/2-AUTHOR/1             1    0.25
 IN.OTH/2-AUTHOR/1                      1    0.25
+IN.OTH/2-IN.UKR/1-AUTHOR/1             1    0.25
 IN.OTH/2-IN.UKR/1-OTHACC/1             1    0.25
 IN.OTH/2-OTHACC/1-AUTHOR/1             1    0.25
+IN.OTH/3-OTHACC/1                      1    0.25
+IN.UKR/1-AUTHOR/1-IN.UKR/1-AUTHOR/1    1    0.25
 IN.UKR/1-AUTHOR/1-RENTED/2             1    0.25
-IN.UKR/1-AUTHOR/3                      1    0.25
 IN.UKR/1-OTHACC/1-AUTHOR/2             1    0.25
 IN.UKR/1-OTHACC/1-IN.UKR/1-AUTHOR/1    1    0.25
 IN.UKR/1-OTHACC/1-IN.UKR/1-OTHACC/1    1    0.25
 IN.UKR/2-AUTHOR/1                      1    0.25
 IN.UKR/2-OTHACC/1-AUTHOR/1             1    0.25
+OTHACC/1-AUTHOR/1-IN.UKR/1             1    0.25
 OTHACC/1-AUTHOR/1-IN.UKR/1-OTHACC/1    1    0.25
 OTHACC/1-AUTHOR/1-IN.UKR/2             1    0.25
+OTHACC/1-AUTHOR/2-IN.UKR/1             1    0.25
 OTHACC/1-AUTHOR/2-RENTED/1             1    0.25
 OTHACC/1-IN.OTH/1                      1    0.25
 OTHACC/1-IN.OTH/1-IN.UKR/1-IN.OTH/1    1    0.25
-OTHACC/1-IN.UKR/1-OTHACC/2             1    0.25
+OTHACC/1-IN.OTH/1-OTHACC/1-IN.OTH/1    1    0.25
+OTHACC/1-IN.OTH/2-OTHACC/1             1    0.25
+OTHACC/1-IN.OTH/3                      1    0.25
+OTHACC/1-IN.UKR/1-AUTHOR/2             1    0.25
 OTHACC/1-RENTED/1                      1    0.25
 OTHACC/1-RENTED/1-AUTHOR/1-IN.UKR/1    1    0.25
 OTHACC/1-RENTED/1-IN.UKR/2             1    0.25
-OTHACC/1-RENTED/2                      1    0.25
 OTHACC/1-RENTED/3                      1    0.25
-OTHACC/2-AUTHOR/1-IN.UKR/1             1    0.25
 OTHACC/2-AUTHOR/1-OTHACC/1             1    0.25
 OTHACC/2-AUTHOR/1-RENTED/1             1    0.25
 OTHACC/2-IN.UKR/1                      1    0.25
 OTHACC/2-IN.UKR/1-AUTHOR/1             1    0.25
-OTHACC/2-RENTED/1                      1    0.25
 OTHACC/3-IN.UKR/1                      1    0.25
 OTHACC/3-RENTED/1                      1    0.25
 RENTED/1-AUTHOR/1-RENTED/1             1    0.25
@@ -863,11 +881,11 @@ RENTED/3-AUTHOR/1                      1    0.25</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            [-&gt; AUTHOR] [-&gt; RENTED] [-&gt; OTHACC] [-&gt; IN.UKR] [-&gt; IN.OTH] [-&gt; *]
-[AUTHOR -&gt;]        0.64        0.04        0.02        0.11        0.01   0.18
-[RENTED -&gt;]        0.59        0.22        0.01        0.12        0.00   0.05
-[OTHACC -&gt;]        0.38        0.08        0.30        0.21        0.02   0.01
-[IN.UKR -&gt;]        0.05        0.00        0.04        0.75        0.00   0.17
-[IN.OTH -&gt;]        0.33        0.00        0.25        0.00        0.40   0.02
+[AUTHOR -&gt;]        0.62        0.04        0.02        0.12        0.01   0.19
+[RENTED -&gt;]        0.59        0.24        0.01        0.12        0.00   0.05
+[OTHACC -&gt;]        0.38        0.09        0.31        0.20        0.01   0.01
+[IN.UKR -&gt;]        0.04        0.00        0.04        0.75        0.00   0.17
+[IN.OTH -&gt;]        0.34        0.00        0.24        0.00        0.40   0.02
 [* -&gt;]             0.16        0.33        0.30        0.02        0.07   0.11</code></pre>
 </div>
 </div>
@@ -1335,8 +1353,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./germany.html" class="pagination-link" aria-label="Accommodation in Germany">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Accommodation in Germany</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

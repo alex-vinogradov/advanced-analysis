@@ -21,8 +21,4 @@ bibliography: references.bib
 format:
   html:
     theme: solar
-  pdf:
-    documentclass: scrreprt
-
-
 

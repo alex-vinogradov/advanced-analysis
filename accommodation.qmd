@@ -1,4 +1,4 @@
-# Trajectories of accommodation in Germany
+# Trajectories of accommodation
 
 The data were prepared for analysis as follows: the longitudinal data format was converted into a wide format for two variables: country and accommodation for rounds 4, 10, 16, 21/22. The converted data are stored in the file "wide-accomm.rds" for further analysis of trajectories.
 
